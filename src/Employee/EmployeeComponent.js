@@ -1,266 +1,27 @@
-// import React, { useState, useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchAllEmployees, insertEmployee } from './EmployeeSlice';
-
-// const EmployeeComponent = () => {
-//   const dispatch = useDispatch();
-//   const employees = useSelector((state) => state.employee.employees);
-
-//   const [newEmployee, setNewEmployee] = useState({
-//     name: '',
-//     password: '',
-//     email: '',
-//     phone: '',
-//     gender: '',
-//     dob: '',
-//     department_Name: '',
-//   });
-
-//   const handleInputChange = (e) => {
-//     setNewEmployee({ ...newEmployee, [e.target.name]: e.target.value });
-//   };
-
-//   const handleInsertEmployee = () => {
-//     dispatch(insertEmployee(newEmployee));
-//     // Clear the form after inserting
-//     setNewEmployee({
-//       name: '',
-//       password: '',
-//       email: '',
-//       phone: '',
-//       gender: '',
-//       dob: '',
-//       department_Name: '',
-//     });
-//   };
-
-//   useEffect(() => {
-//     // Fetch all employees when the component mounts
-//     dispatch(fetchAllEmployees());
-//   }, [dispatch]);
-
-//   return (
-//     <div>
-//       <h1>Employee List</h1>
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>ID</th>
-//             <th>Name</th>
-//             <th>Email</th>
-//             <th>Phone</th>
-//             <th>Gender</th>
-//             <th>DOB</th>
-//             <th>Department Name</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {employees.map((employee) => (
-//             <tr key={employee.id}>
-//               <td>{employee.id}</td>
-//               <td>{employee.name}</td>
-//               <td>{employee.email}</td>
-//               <td>{employee.phone}</td>
-//               <td>{employee.gender}</td>
-//               <td>{employee.dob}</td>
-//               <td>{employee.departementName}</td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-
-//       <h2>Add New Employee</h2>
-//       <div>
-//         <label>Name:</label>
-//         <input type="text" name="name" value={newEmployee.name} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Password:</label>
-//         <input type="text" name="password" value={newEmployee.password} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Email:</label>
-//         <input type="text" name="email" value={newEmployee.email} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Phone:</label>
-//         <input type="text" name="phone" value={newEmployee.phone} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Gender:</label>
-//         <input type="text" name="gender" value={newEmployee.gender} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>DOB:</label>
-//         <input type="text" name="dob" value={newEmployee.dob} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Department Name:</label>
-//         <input type="text" name="department_Name" value={newEmployee.department_Name} onChange={handleInputChange} />
-//       </div>
-//       <button onClick={handleInsertEmployee}>Insert Employee</button>
-//     </div>
-//   );
-// };
-
-// export default EmployeeComponent;
-
-
-// EmployeeComponent.js
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchAllEmployees, insertEmployee, updateEmployee, deleteEmployee } from './EmployeeSlice';
-
-// const EmployeeComponent = () => {
-//   const dispatch = useDispatch();
-//   const employees = useSelector((state) => state.employee.employees);
-
-//   const [newEmployee, setNewEmployee] = useState({
-//     name: '',
-//     password: '',
-//     email: '',
-//     phone: '',
-//     gender: '',
-//     dob: '',
-//     department_Name: '',
-//   });
-
-//   const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
-
-//   const handleInputChange = (e) => {
-//     setNewEmployee({ ...newEmployee, [e.target.name]: e.target.value });
-//   };
-
-//   const handleInsertEmployee = () => {
-//     dispatch(insertEmployee(newEmployee));
-//     // Clear the form after inserting
-//     setNewEmployee({
-//       name: '',
-//       password: '',
-//       email: '',
-//       phone: '',
-//       gender: '',
-//       dob: '',
-//       department_Name: '',
-//     });
-//   };
-
-//   const handleUpdateEmployee = () => {
-//     if (selectedEmployeeId) {
-//       dispatch(updateEmployee(selectedEmployeeId, newEmployee));
-//       setSelectedEmployeeId(null); // Reset selectedEmployeeId after update
-//       setNewEmployee({
-//         name: '',
-//         password: '',
-//         email: '',
-//         phone: '',
-//         gender: '',
-//         dob: '',
-//         department_Name: '',
-//       });
-//     }
-//   };
-
-//   const handleDeleteEmployee = (id) => {
-//     dispatch(deleteEmployee(id));
-//   };
-
-//   useEffect(() => {
-//     // Fetch all employees when the component mounts
-//     dispatch(fetchAllEmployees());
-//   }, [dispatch]);
-
-//   return (
-//     <div>
-//       <h1>Employee List</h1>
-//       <table>
-//         <thead>
-//           <tr>
-//             <th>ID</th>
-//             <th>Name</th>
-//             <th>Email</th>
-//             <th>Phone</th>
-//             <th>Gender</th>
-//             <th>DOB</th>
-//             <th>Department Name</th>
-//             <th>Actions</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {employees.map((employee) => (
-//             <tr key={employee.id}>
-//               <td>{employee.id}</td>
-//               <td>{employee.name}</td>
-//               <td>{employee.email}</td>
-//               <td>{employee.phone}</td>
-//               <td>{employee.gender}</td>
-//               <td>{employee.dob}</td>
-//               <td>{employee.departementName}</td>
-//               <td>
-//                 <button onClick={() => setSelectedEmployeeId(employee.id)}>Edit</button>
-//                 <button onClick={() => handleDeleteEmployee(employee.id)}>Delete</button>
-//               </td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-
-//       <h2>{selectedEmployeeId ? 'Update Employee' : 'Add New Employee'}</h2>
-//       <div>
-//         <label>Name:</label>
-//         <input type="text" name="name" value={newEmployee.name} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Password:</label>
-//         <input type="text" name="password" value={newEmployee.password} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Email:</label>
-//         <input type="text" name="email" value={newEmployee.email} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Phone:</label>
-//         <input type="text" name="phone" value={newEmployee.phone} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Gender:</label>
-//         <input type="text" name="gender" value={newEmployee.gender} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>DOB:</label>
-//         <input type="text" name="dob" value={newEmployee.dob} onChange={handleInputChange} />
-//       </div>
-//       <div>
-//         <label>Department Name:</label>
-//         <input type="text" name="department_Name" value={newEmployee.department_Name} onChange={handleInputChange} />
-//       </div>
-//       <button onClick={selectedEmployeeId ? handleUpdateEmployee : handleInsertEmployee}>
-//         {selectedEmployeeId ? 'Update Employee' : 'Insert Employee'}
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default EmployeeComponent;
-
-
-
-
-
-
-
-
-// EmployeeComponent.js
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllEmployees, insertEmployee, updateEmployeeById, deleteEmployee } from './EmployeeSlice';
+import {
+  fetchAllEmployees,
+  insertEmployee,
+  updateEmployeeById,
+  deleteEmployee,
+} from './EmployeeSlice';
+
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Button,
+  TextField,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from '@mui/material';
 
 const EmployeeComponent = () => {
   const dispatch = useDispatch();
@@ -273,17 +34,21 @@ const EmployeeComponent = () => {
     phone: '',
     gender: '',
     dob: '',
-    department_Name: '',
+    departementName: '',
   });
 
   const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
 
-  const handleInputChange = (e) => {
-    setNewEmployee({ ...newEmployee, [e.target.name]: e.target.value });
+ 
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleOpenDialog = () => {
+    setOpenDialog(true);
   };
 
-  const handleInsertEmployee = () => {
-    dispatch(insertEmployee(newEmployee));
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+    // Clear form values when closing the dialog
     setNewEmployee({
       name: '',
       password: '',
@@ -291,28 +56,43 @@ const EmployeeComponent = () => {
       phone: '',
       gender: '',
       dob: '',
-      department_Name: '',
+      departementName: '',
     });
+  };
+
+  const handleInputChange = (e) => {
+    setNewEmployee({ ...newEmployee, [e.target.name]: e.target.value });
+  };
+
+  const handleInsertEmployee = () => {
+    dispatch(insertEmployee(newEmployee));
+    handleCloseDialog();
   };
 
   const handleUpdateEmployee = () => {
     if (selectedEmployeeId) {
       dispatch(updateEmployeeById(selectedEmployeeId, newEmployee));
       setSelectedEmployeeId(null);
-      setNewEmployee({
-        name: '',
-        password: '',
-        email: '',
-        phone: '',
-        gender: '',
-        dob: '',
-        department_Name: '',
-      });
+      handleCloseDialog();
     }
   };
 
   const handleDeleteEmployee = (id) => {
     dispatch(deleteEmployee(id));
+  };
+
+  const handleEditEmployee = (employee) => {
+    setSelectedEmployeeId(employee.id);
+    setNewEmployee({
+      name: employee.name,
+      password: employee.password,
+      email: employee.email,
+      phone: employee.phone,
+      gender: employee.gender,
+      dob: employee.dob,
+      departementName: employee.departementName,
+    });
+    handleOpenDialog();
   };
 
   useEffect(() => {
@@ -322,70 +102,85 @@ const EmployeeComponent = () => {
   return (
     <div>
       <h1>Employee List</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Gender</th>
-            <th>DOB</th>
-            <th>Department Name</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {employees.map((employee) => (
-            <tr key={employee.id}>
-              <td>{employee.id}</td>
-              <td>{employee.name}</td>
-              <td>{employee.email}</td>
-              <td>{employee.phone}</td>
-              <td>{employee.gender}</td>
-              <td>{employee.dob}</td>
-              <td>{employee.departementName}</td>
-              <td>
-                <button onClick={() => setSelectedEmployeeId(employee.id)}>Edit</button>
-                <button onClick={() => handleDeleteEmployee(employee.id)}>Delete</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
 
-      <h2>{selectedEmployeeId ? 'Update Employee' : 'Add New Employee'}</h2>
-      <div>
-        <label>Name:</label>
-        <input type="text" name="name" value={newEmployee.name} onChange={handleInputChange} />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="text" name="password" value={newEmployee.password} onChange={handleInputChange} />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input type="text" name="email" value={newEmployee.email} onChange={handleInputChange} />
-      </div>
-      <div>
-        <label>Phone:</label>
-        <input type="text" name="phone" value={newEmployee.phone} onChange={handleInputChange} />
-      </div>
-      <div>
-        <label>Gender:</label>
-        <input type="text" name="gender" value={newEmployee.gender} onChange={handleInputChange} />
-      </div>
-      <div>
-        <label>DOB:</label>
-        <input type="text" name="dob" value={newEmployee.dob} onChange={handleInputChange} />
-      </div>
-      <div>
-        <label>Department Name:</label>
-        <input type="text" name="department_Name" value={newEmployee.department_Name} onChange={handleInputChange} />
-      </div>
-      <button onClick={selectedEmployeeId ? handleUpdateEmployee : handleInsertEmployee}>
-        {selectedEmployeeId ? 'Update Employee' : 'Insert Employee'}
-      </button>
+     
+      <Button variant="contained" color="primary" onClick={handleOpenDialog}>
+        Add New Employee
+      </Button>
+
+     
+      <Dialog open={openDialog} onClose={handleCloseDialog}>
+        <DialogTitle>Add New Employee</DialogTitle>
+        <DialogContent>
+          <div>
+            <label>Name:</label>
+            <TextField type="text" name="name" value={newEmployee.name} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label>Password:</label>
+            <TextField type="text" name="password" value={newEmployee.password} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label>Email:</label>
+            <TextField type="text" name="email" value={newEmployee.email} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label>Phone:</label>
+            <TextField type="text" name="phone" value={newEmployee.phone} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label>Gender:</label>
+            <TextField type="text" name="gender" value={newEmployee.gender} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label>DOB:</label>
+            <TextField type="text" name="dob" value={newEmployee.dob} onChange={handleInputChange} />
+          </div>
+          <div>
+            <label>Department Name:</label>
+            <TextField type="text" name="departementName" value={newEmployee.departementName} onChange={handleInputChange} />
+          </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog}>Cancel</Button>
+          <Button onClick={selectedEmployeeId ? handleUpdateEmployee : handleInsertEmployee}>Insert Employee</Button>
+        </DialogActions>
+      </Dialog>
+
+     
+      <TableContainer component={Paper}>
+        <Table>
+          <TableHead>
+            <TableRow>
+             
+              <TableCell>Name</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>Phone</TableCell>
+              <TableCell>Gender</TableCell>
+              <TableCell>DOB</TableCell>
+              <TableCell>Department Name</TableCell>
+              <TableCell>Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {employees.map((employee) => (
+              <TableRow key={employee.id}>
+                
+                <TableCell>{employee.name}</TableCell>
+                <TableCell>{employee.email}</TableCell>
+                <TableCell>{employee.phone}</TableCell>
+                <TableCell>{employee.gender}</TableCell>
+                <TableCell>{employee.dob}</TableCell>
+                <TableCell>{employee.departementName}</TableCell>
+                <TableCell>
+                  <Button onClick={() => handleEditEmployee(employee)}>Edit</Button>
+                  <Button onClick={() => handleDeleteEmployee(employee.id)}>Delete</Button>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   );
 };
