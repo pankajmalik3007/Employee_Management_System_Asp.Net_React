@@ -135,7 +135,6 @@ namespace Infra_Library.Services.CustomServices.SalaryServices
             return employeeSalaries;
         }
 
-
         public async  Task<bool> Insert(SallaryInsertModel sallaryInsertModel)
         {
             Employee employee = await _employee.Find(d => d.Name == sallaryInsertModel.Emp_Name);
