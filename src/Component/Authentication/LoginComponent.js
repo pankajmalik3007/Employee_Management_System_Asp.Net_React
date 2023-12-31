@@ -1,28 +1,53 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { login } from './LoginSlice';
+import { userlogin } from './LoginSlice';
 import RegisterComponent from './RegisterComponent';
 import { TextField, Button, Typography, Container, Paper, Grid } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-const LoginComponent = () => {
+
+const LoginComponent = ({ onLoginSuccess }) => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.login.isAuthenticated);
   const error = useSelector((state) => state.login.error);
+  const successMessage = useSelector((state) => state.login.successMessage);
 
   const [credentials, setCredentials] = useState({ email: '', password: '' });
   const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    dispatch(login(credentials.email, credentials.password));
+    setLoading(true);
+
+    try {
+      await dispatch(userlogin(credentials.email, credentials.password));
+      setLoading(false);
+
+      setCredentials({ email: '', password: '' });
+
+      onLoginSuccess();
+
+      navigate('/employees');
+    } catch (loginError) {
+      setLoading(false);
+      console.error('Login error:', loginError);
+    }
   };
 
   const handleToggleForm = () => {
     setShowRegisterForm(!showRegisterForm);
+  };
+
+  const handleRegisterButtonClick = () => {
+    setShowRegisterForm(true);
   };
 
   return (
@@ -31,7 +56,10 @@ const LoginComponent = () => {
         <Typography component="h2" variant="h5">
           {showRegisterForm ? 'Register' : 'Login'}
         </Typography>
-        {!isAuthenticated && !showRegisterForm && (
+
+        {showRegisterForm ? (
+          <RegisterComponent onBackToLogin={handleToggleForm} />
+        ) : (
           <form onSubmit={handleLogin}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
@@ -55,18 +83,17 @@ const LoginComponent = () => {
                 />
               </Grid>
             </Grid>
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
-              Login
+            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} disabled={loading}>
+              {loading ? 'Logging in...' : 'Login'}
             </Button>
             {error && <div style={{ color: 'red' }}>{error.Message}</div>}
+            {isAuthenticated && successMessage && <div style={{ color: 'green' }}>{successMessage}</div>}
           </form>
         )}
 
-        {!isAuthenticated && showRegisterForm && <RegisterComponent />}
-        
         {!isAuthenticated && (
-          <Button onClick={handleToggleForm} fullWidth sx={{ mt: 2 }}>
-            {showRegisterForm ? 'Back to Login' : 'Register'}
+          <Button onClick={handleRegisterButtonClick} fullWidth sx={{ mt: 2 }}>
+            Register
           </Button>
         )}
       </Paper>

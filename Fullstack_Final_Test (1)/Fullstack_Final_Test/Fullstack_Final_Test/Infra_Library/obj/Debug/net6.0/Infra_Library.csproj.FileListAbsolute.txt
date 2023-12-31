@@ -1,0 +1,68 @@
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.AssemblyReference.cache
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfoInputs.cache
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfo.cs
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CoreCompileInputs.cache
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.deps.json
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.runtimeconfig.json
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.dll
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.pdb
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.dll
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.pdb
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CopyComplete
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.dll
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\refint\Infra_Library.dll
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.pdb
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.genruntimeconfig.cache
+D:\Fullstack_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\ref\Infra_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.deps.json
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.runtimeconfig.json
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.AssemblyReference.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfoInputs.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfo.cs
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CoreCompileInputs.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CopyComplete
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\refint\Infra_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.genruntimeconfig.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\ref\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.deps.json
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.runtimeconfig.json
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.pdb
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.dll
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.pdb
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.AssemblyReference.cache
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfoInputs.cache
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfo.cs
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CoreCompileInputs.cache
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CopyComplete
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\refint\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.pdb
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.genruntimeconfig.cache
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\ref\Infra_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.deps.json
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.runtimeconfig.json
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.AssemblyReference.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfoInputs.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfo.cs
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CoreCompileInputs.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CopyComplete
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\refint\Infra_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.genruntimeconfig.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\ref\Infra_Library.dll

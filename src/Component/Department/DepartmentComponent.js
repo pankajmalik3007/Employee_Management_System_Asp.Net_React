@@ -19,8 +19,16 @@ import {
   TextField,
 } from '@mui/material';
 
+import { useAuth } from '../Auth/authContext'; 
+
+const getAuthToken = () => {
+  const authToken = localStorage.getItem('token');
+  return authToken ? `Bearer ${authToken}` : '';
+};
+
 const DepartmentComponent = () => {
   const dispatch = useDispatch();
+  const { authToken } = useAuth(); // Use your auth context
   const departments = useSelector((state) => state.department.departments);
 
   const [newDepartment, setNewDepartment] = useState({
@@ -34,8 +42,7 @@ const DepartmentComponent = () => {
   };
 
   const handleInsertDepartment = () => {
-    dispatch(insertDepartment(newDepartment));
-    
+    dispatch(insertDepartment(newDepartment, authToken)); 
     setNewDepartment({
       name: '',
     });
@@ -43,7 +50,7 @@ const DepartmentComponent = () => {
 
   const handleUpdateDepartment = () => {
     if (selectedDepartmentId) {
-      dispatch(updateDepartmentById(selectedDepartmentId, newDepartment));
+      dispatch(updateDepartmentById(selectedDepartmentId, newDepartment, authToken)); 
       setSelectedDepartmentId(null);
       setNewDepartment({
         name: '',
@@ -52,7 +59,7 @@ const DepartmentComponent = () => {
   };
 
   const handleDeleteDepartment = (id) => {
-    dispatch(deleteDepartment(id));
+    dispatch(deleteDepartment(id, authToken)); 
   };
 
   const handleEditDepartment = (department) => {
@@ -60,20 +67,21 @@ const DepartmentComponent = () => {
   };
 
   useEffect(() => {
- 
+    console.log("Fetching departments...");
+    
+      dispatch(fetchAllDepartments(getAuthToken())); 
+    
+  }, [dispatch]);
+
+  useEffect(() => {
     const selectedDepartment = departments.find((department) => department.id === selectedDepartmentId);
 
-   
     if (selectedDepartment) {
       setNewDepartment({
         name: selectedDepartment.name,
       });
     }
   }, [selectedDepartmentId, departments]);
-
-  useEffect(() => {
-    dispatch(fetchAllDepartments());
-  }, [dispatch]);
 
   return (
     <div>

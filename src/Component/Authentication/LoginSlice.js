@@ -1,12 +1,10 @@
-
 import { createSlice } from '@reduxjs/toolkit';
-import BaseUrl from '../../Url/BaseUrl';
 
 export const loginSlice = createSlice({
   name: 'login',
   initialState: {
     user: null,
-    isAuthenticated: false,
+    isAuthenticated: localStorage.getItem('token') ? true : false,
     error: null,
   },
   reducers: {
@@ -30,11 +28,9 @@ export const loginSlice = createSlice({
 
 export const { setUser, setError, logout } = loginSlice.actions;
 
-export const login = (email, password) => async (dispatch) => {
+export const userlogin = (email, password) => async (dispatch) => {
   try {
-    console.log('Login Payload:', { Email: email, Password: password });
-
-    const response = await fetch(`${BaseUrl.apiBaseUrl}Account/login`, {
+    const response = await fetch(`https://localhost:44311/api/Account/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,10 +39,12 @@ export const login = (email, password) => async (dispatch) => {
         Email: email,
         Password: password,
       }),
+      credentials: 'include',
     });
 
     if (response.ok) {
       const data = await response.json();
+      localStorage.setItem("token", data.token);
       dispatch(setUser(data));
     } else {
       const errorData = await response.json();
@@ -62,17 +60,16 @@ export const login = (email, password) => async (dispatch) => {
   }
 };
 
-// New registration action
-export const register = (email, password) => async (dispatch) => {
+export const register = (firstName, lastName, email, password) => async (dispatch) => {
   try {
-    console.log('Registration Payload:', { Email: email, Password: password });
-
-    const response = await fetch(`${BaseUrl.apiBaseUrl}Account/register`, {
+    const response = await fetch(`https://localhost:44311/api/Account/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        FirstName: firstName,
+        LastName: lastName,
         Email: email,
         Password: password,
       }),

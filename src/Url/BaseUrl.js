@@ -1,4 +1,4 @@
-// BaseUrl.js
+
 class BaseUrl {
   static apiBaseUrl = 'https://localhost:44311/api/';
 
@@ -21,12 +21,8 @@ class BaseUrl {
   static getMonthlySalaryByDepartmentUrl = `${BaseUrl.apiBaseUrl}Department/getMonthlySalaryByDepartment`;
   static searchEmployeeByNameUrl = `${BaseUrl.apiBaseUrl}Employee/SearchByName`;
 
-
   static registerUrl = `${BaseUrl.apiBaseUrl}Account/register`;
   static loginUrl = `${BaseUrl.apiBaseUrl}Account/login`;
   static logoutUrl = `${BaseUrl.apiBaseUrl}Account/logout`;
-
-
 }
-
 export default BaseUrl;

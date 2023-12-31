@@ -1,6 +1,10 @@
-// EmployeeSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 import BaseUrl from '../Url/BaseUrl';
+
+const getAuthToken = () => {
+  const authToket = localStorage.getItem('token');
+  return authToket ? `Bearer ${authToket}` : '';
+};
 
 export const employeeSlice = createSlice({
   name: 'employee',
@@ -30,10 +34,16 @@ export const employeeSlice = createSlice({
 
 export const { setEmployees, addEmployee, updateEmployee, removeEmployee } = employeeSlice.actions;
 
-// Asynchronous thunk to fetch all employees
 export const fetchAllEmployees = () => async (dispatch) => {
   try {
-    const response = await fetch(BaseUrl.getAllEmployeeUrl);
+    const response = await fetch(`https://localhost:44311/api/Employee/getAllEmployee`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        Authorization: getAuthToken(), 
+      },
+    });
+
     const data = await response.json();
     dispatch(setEmployees(data));
   } catch (error) {
@@ -41,13 +51,14 @@ export const fetchAllEmployees = () => async (dispatch) => {
   }
 };
 
-// Asynchronous thunk to insert a new employee
+
 export const insertEmployee = (employeeData) => async (dispatch) => {
   try {
     const response = await fetch(BaseUrl.insertEmployeeUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: getAuthToken(),
       },
       body: JSON.stringify(employeeData),
     });
@@ -65,6 +76,7 @@ export const updateEmployeeById = (employeeId, updatedEmployeeData) => async (di
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: getAuthToken(), 
       },
       body: JSON.stringify({ ...updatedEmployeeData, id: employeeId }),
     });
@@ -87,11 +99,13 @@ export const updateEmployeeById = (employeeId, updatedEmployeeData) => async (di
   }
 };
 
-
 export const deleteEmployee = (employeeId) => async (dispatch) => {
   try {
     await fetch(`${BaseUrl.deleteEmployeeUrl}?id=${employeeId}`, {
       method: 'DELETE',
+      headers: {
+        Authorization: getAuthToken(), 
+      },
     });
 
     dispatch(removeEmployee(employeeId));
@@ -101,12 +115,3 @@ export const deleteEmployee = (employeeId) => async (dispatch) => {
 };
 
 export default employeeSlice.reducer;
-
-
-
-
-
-
-
-
-

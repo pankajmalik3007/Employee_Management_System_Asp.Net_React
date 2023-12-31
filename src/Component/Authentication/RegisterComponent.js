@@ -3,15 +3,21 @@ import { useDispatch } from 'react-redux';
 import { register } from './LoginSlice';
 import { TextField, Button, Typography, Container, Paper, Grid } from '@mui/material';
 
-const RegisterComponent = () => {
+const RegisterComponent = ({ onBackToLogin }) => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-  const handleRegister = () => {
-    dispatch(register(firstName, lastName, email, password));
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    try {
+      await dispatch(register(firstName, lastName, email, password));
+    } catch (registerError) {
+      console.error('Registration error:', registerError);
+    }
   };
 
   return (
@@ -20,30 +26,12 @@ const RegisterComponent = () => {
         <Typography component="h2" variant="h5">
           Register
         </Typography>
-        <form>
+        <form onSubmit={handleRegister}>
           <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="FirstName"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                fullWidth
-                label="FirstName"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                label="Email"
+                label="First Name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
@@ -51,20 +39,34 @@ const RegisterComponent = () => {
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                label="Password"
+                label="Last Name"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
             </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                fullWidth
+                label="Password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Grid>
           </Grid>
-          <Button
-            type="button"
-            fullWidth
-            variant="contained"
-            onClick={handleRegister}
-            sx={{ mt: 3, mb: 2 }}
-          >
+          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
             Register
+          </Button>
+          <Button onClick={onBackToLogin} fullWidth sx={{ mt: 2 }}>
+            Back to Login
           </Button>
         </form>
       </Paper>

@@ -1,4 +1,3 @@
-// SalaryComponent.js
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -23,10 +22,19 @@ import {
   DialogContent,
   DialogActions,
 } from '@mui/material';
+import { useAuth } from '../Auth/authContext';
+
+
+const getAuthToken = () => {
+  const authToken = localStorage.getItem('token');
+  return authToken ? `Bearer ${authToken}` : '';
+};
 
 const SalaryComponent = () => {
   const dispatch = useDispatch();
   const salaries = useSelector((state) => state.salary.salaries);
+
+  const {  authToken } = useAuth(); 
 
   const [newSalary, setNewSalary] = useState({
     emp_Name: '',
@@ -36,7 +44,7 @@ const SalaryComponent = () => {
 
   const [selectedSalaryId, setSelectedSalaryId] = useState(null);
 
-  // State for controlling the dialog
+
   const [openDialog, setOpenDialog] = useState(false);
 
   const handleOpenDialog = () => {
@@ -45,7 +53,7 @@ const SalaryComponent = () => {
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
-    // Clear form values when closing the dialog
+    
     setNewSalary({
       emp_Name: '',
       amount: 0,
@@ -57,18 +65,26 @@ const SalaryComponent = () => {
     setNewSalary({ ...newSalary, [e.target.name]: e.target.value });
   };
 
-  const handleInsertSalary = () => {
-    dispatch(insertSalary(newSalary));
-    handleCloseDialog();
-  };
-
-  const handleUpdateSalary = () => {
-    if (selectedSalaryId) {
-      dispatch(updateSalaryById(selectedSalaryId, newSalary));
-      setSelectedSalaryId(null);
+  const handleInsertSalary = async () => {
+    const success = await dispatch(insertSalary(newSalary));
+    if (success) {
+      setNewSalary({
+        emp_Name: '',
+        amount: 0,
+        date: '',
+      });
       handleCloseDialog();
     }
   };
+  
+
+  const handleUpdateSalary = () => {
+    if (selectedSalaryId) {
+      dispatch(updateSalaryById({ id: selectedSalaryId, updatedProperties: newSalary }, authToken));
+      setSelectedSalaryId(null);
+      handleCloseDialog();
+    }
+  };  
 
   const handleDeleteSalaryItem = (empId) => {
     dispatch(deleteSalary(empId));
@@ -85,19 +101,20 @@ const SalaryComponent = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchAllSalaries());
+    
+    dispatch(fetchAllSalaries(getAuthToken()));
   }, [dispatch]);
 
   return (
     <div>
       <h1>Salary List</h1>
 
-      {/* Button to add a new salary */}
+      
       <Button variant="contained" color="primary" onClick={handleOpenDialog}>
         Add New Salary
       </Button>
 
-      {/* Dialog for inserting a new salary */}
+      
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>Add New Salary</DialogTitle>
         <DialogContent>
@@ -110,17 +127,21 @@ const SalaryComponent = () => {
             <TextField type="number" name="amount" value={newSalary.amount} onChange={handleInputChange} />
           </div>
           <div>
-            <label>Date:</label>
-            <TextField type="text" name="date" value={newSalary.date} onChange={handleInputChange} />
-          </div>
+          <label>DOB:</label>
+          <TextField
+            type="date"
+            name="date"
+            value={newSalary.date}
+            onChange={handleInputChange}
+          />
+        </div>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog}>Cancel</Button>
-          <Button onClick={selectedSalaryId ? handleUpdateSalary : handleInsertSalary}>Insert Salary</Button>
+          <Button onClick={handleInsertSalary}>Insert Salary</Button>
+          <Button onClick={handleUpdateSalary}>Edit Salary</Button>
         </DialogActions>
       </Dialog>
-
-      {/* Table to display the list of salaries */}
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -138,7 +159,7 @@ const SalaryComponent = () => {
                 <TableCell>{salary.empId}</TableCell>
                 <TableCell>{salary.empName}</TableCell>
                 <TableCell>{salary.amount}</TableCell>
-                <TableCell>{salary.date}</TableCell>
+                <TableCell>{new Date(salary.date).toLocaleDateString()}</TableCell>
                 <TableCell>
                   <Button onClick={() => handleEditSalary(salary)}>Edit</Button>
                   <Button onClick={() => handleDeleteSalaryItem(salary.empId)}>Delete</Button>

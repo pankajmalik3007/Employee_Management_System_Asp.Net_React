@@ -7,6 +7,8 @@ import {
   deleteEmployee,
 } from './EmployeeSlice';
 
+import { useAuth } from '../Component/Auth/authContext';
+
 import {
   Table,
   TableBody,
@@ -23,8 +25,15 @@ import {
   DialogActions,
 } from '@mui/material';
 
+
+const getAuthToken = () => {
+  const authToken = localStorage.getItem('token');
+  return authToken ? `Bearer ${authToken}` : '';
+};
 const EmployeeComponent = () => {
   const dispatch = useDispatch();
+  const {  authToken } = useAuth(); 
+
   const employees = useSelector((state) => state.employee.employees);
 
   const [newEmployee, setNewEmployee] = useState({
@@ -36,10 +45,13 @@ const EmployeeComponent = () => {
     dob: '',
     departementName: '',
   });
-
+  useEffect(() => {
+    console.log("Fetching employees...");
+    console.log("Auth Token:", authToken); 
+    dispatch(fetchAllEmployees(getAuthToken()));
+  }, [dispatch, authToken]);
   const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
 
- 
   const [openDialog, setOpenDialog] = useState(false);
 
   const handleOpenDialog = () => {
@@ -48,7 +60,6 @@ const EmployeeComponent = () => {
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
-    // Clear form values when closing the dialog
     setNewEmployee({
       name: '',
       password: '',
@@ -65,20 +76,20 @@ const EmployeeComponent = () => {
   };
 
   const handleInsertEmployee = () => {
-    dispatch(insertEmployee(newEmployee));
+    dispatch(insertEmployee(newEmployee, authToken));
     handleCloseDialog();
   };
 
   const handleUpdateEmployee = () => {
     if (selectedEmployeeId) {
-      dispatch(updateEmployeeById(selectedEmployeeId, newEmployee));
+      dispatch(updateEmployeeById(selectedEmployeeId, newEmployee, authToken));
       setSelectedEmployeeId(null);
       handleCloseDialog();
     }
   };
 
   const handleDeleteEmployee = (id) => {
-    dispatch(deleteEmployee(id));
+    dispatch(deleteEmployee(id, authToken));
   };
 
   const handleEditEmployee = (employee) => {
@@ -94,11 +105,7 @@ const EmployeeComponent = () => {
     });
     handleOpenDialog();
   };
-
-  useEffect(() => {
-    dispatch(fetchAllEmployees());
-  }, [dispatch]);
-
+  
   return (
     <div>
       <h1>Employee List</h1>
@@ -107,9 +114,7 @@ const EmployeeComponent = () => {
       <Button variant="contained" color="primary" onClick={handleOpenDialog}>
         Add New Employee
       </Button>
-
-     
-      <Dialog open={openDialog} onClose={handleCloseDialog}>
+        <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>Add New Employee</DialogTitle>
         <DialogContent>
           <div>
@@ -132,10 +137,16 @@ const EmployeeComponent = () => {
             <label>Gender:</label>
             <TextField type="text" name="gender" value={newEmployee.gender} onChange={handleInputChange} />
           </div>
+          
           <div>
-            <label>DOB:</label>
-            <TextField type="text" name="dob" value={newEmployee.dob} onChange={handleInputChange} />
-          </div>
+          <label>DOB:</label>
+          <TextField
+            type="date"
+            name="dob"
+            value={newEmployee.dob}
+            onChange={handleInputChange}
+          />
+        </div>
           <div>
             <label>Department Name:</label>
             <TextField type="text" name="departementName" value={newEmployee.departementName} onChange={handleInputChange} />
@@ -143,8 +154,9 @@ const EmployeeComponent = () => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleCloseDialog}>Cancel</Button>
-          <Button onClick={selectedEmployeeId ? handleUpdateEmployee : handleInsertEmployee}>Insert Employee</Button>
-        </DialogActions>
+          <Button onClick={handleInsertEmployee}>Insert Employee</Button>
+          <Button onClick={handleUpdateEmployee}>Edit Employee</Button>
+       </DialogActions>
       </Dialog>
 
      
@@ -163,22 +175,22 @@ const EmployeeComponent = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {employees.map((employee) => (
-              <TableRow key={employee.id}>
-                
-                <TableCell>{employee.name}</TableCell>
-                <TableCell>{employee.email}</TableCell>
-                <TableCell>{employee.phone}</TableCell>
-                <TableCell>{employee.gender}</TableCell>
-                <TableCell>{employee.dob}</TableCell>
-                <TableCell>{employee.departementName}</TableCell>
-                <TableCell>
-                  <Button onClick={() => handleEditEmployee(employee)}>Edit</Button>
-                  <Button onClick={() => handleDeleteEmployee(employee.id)}>Delete</Button>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
+          {Array.isArray(employees) && employees.map((employee) => (
+            <TableRow key={employee.id}>
+              <TableCell>{employee.name}</TableCell>
+              <TableCell>{employee.email}</TableCell>
+              <TableCell>{employee.phone}</TableCell>
+              <TableCell>{employee.gender}</TableCell>
+              <TableCell>{new Date(employee.dob).toLocaleDateString()}</TableCell>
+              <TableCell>{employee.departementName}</TableCell>
+              <TableCell>
+                <Button onClick={() => handleEditEmployee(employee)}>Edit</Button>
+                <Button onClick={() => handleDeleteEmployee(employee.id)}>Delete</Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+
         </Table>
       </TableContainer>
     </div>
@@ -186,3 +198,7 @@ const EmployeeComponent = () => {
 };
 
 export default EmployeeComponent;
+
+
+
+

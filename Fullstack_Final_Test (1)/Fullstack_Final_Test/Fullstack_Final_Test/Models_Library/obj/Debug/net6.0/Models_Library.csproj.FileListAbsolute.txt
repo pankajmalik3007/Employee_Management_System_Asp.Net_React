@@ -1,0 +1,56 @@
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.deps.json
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.runtimeconfig.json
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.dll
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.pdb
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.csproj.AssemblyReference.cache
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.AssemblyInfoInputs.cache
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.AssemblyInfo.cs
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.csproj.CoreCompileInputs.cache
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.dll
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\refint\Models_Library.dll
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.pdb
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.genruntimeconfig.cache
+D:\Fullstack_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\ref\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.deps.json
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.runtimeconfig.json
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.csproj.AssemblyReference.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.AssemblyInfoInputs.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.AssemblyInfo.cs
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.csproj.CoreCompileInputs.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\refint\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.genruntimeconfig.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\ref\Models_Library.dll
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.deps.json
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.runtimeconfig.json
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.dll
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.pdb
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.csproj.AssemblyReference.cache
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.AssemblyInfoInputs.cache
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.AssemblyInfo.cs
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.csproj.CoreCompileInputs.cache
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.dll
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\refint\Models_Library.dll
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.pdb
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.genruntimeconfig.cache
+C:\Users\TGSUser148\Downloads\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\ref\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.deps.json
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.runtimeconfig.json
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\bin\Debug\net6.0\Models_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.csproj.AssemblyReference.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.AssemblyInfoInputs.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.AssemblyInfo.cs
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.csproj.CoreCompileInputs.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\refint\Models_Library.dll
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.pdb
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\Models_Library.genruntimeconfig.cache
+C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Models_Library\obj\Debug\net6.0\ref\Models_Library.dll

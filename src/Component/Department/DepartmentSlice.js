@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import BaseUrl from '../../Url/BaseUrl';
 
+const getAuthToken = () => {
+  const authToken = localStorage.getItem('token');
+  return authToken ? `Bearer ${authToken}` : '';
+};
+
 export const departmentSlice = createSlice({
   name: 'department',
   initialState: {
@@ -31,7 +36,13 @@ export const { setDepartments, addDepartment, updateDepartment, removeDepartment
 
 export const fetchAllDepartments = () => async (dispatch) => {
   try {
-    const response = await fetch(BaseUrl.getAllDepartmentUrl);
+    const response = await fetch(BaseUrl.getAllDepartmentUrl, {
+      method: 'GET',
+      headers: {
+        Authorization: getAuthToken(),
+      },
+    });
+
     const data = await response.json();
     dispatch(setDepartments(data));
   } catch (error) {
@@ -45,6 +56,7 @@ export const insertDepartment = (departmentData) => async (dispatch) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: getAuthToken(), 
       },
       body: JSON.stringify(departmentData),
     });
@@ -57,33 +69,36 @@ export const insertDepartment = (departmentData) => async (dispatch) => {
 };
 
 export const updateDepartmentById = (departmentId, updatedDepartmentData) => async (dispatch) => {
-    try {
-      const response = await fetch(`https://localhost:44311/api/Department/updateDepartment`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...updatedDepartmentData, id: departmentId }),
-      });
-  
-      if (!response.ok) {
-        const responseBody = await response.text();
-        console.error('Error updating department:', responseBody);
-        return;
-      }
-  
-      const updatedDepartment = await response.json();
-      dispatch(updateDepartment(updatedDepartment));
-    } catch (error) {
-      console.error('Error updating department:', error);
+  try {
+    const response = await fetch(`https://localhost:44311/api/Department/updateDepartment`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: getAuthToken(), 
+      },
+      body: JSON.stringify({ ...updatedDepartmentData, id: departmentId }),
+    });
+
+    if (!response.ok) {
+      const responseBody = await response.text();
+      console.error('Error updating department:', responseBody);
+      return;
     }
-  };
-  
+
+    const updatedDepartment = await response.json();
+    dispatch(updateDepartment(updatedDepartment));
+  } catch (error) {
+    console.error('Error updating department:', error);
+  }
+};
 
 export const deleteDepartment = (departmentId) => async (dispatch) => {
   try {
     await fetch(`${BaseUrl.deleteDepartmentUrl}?id=${departmentId}`, {
       method: 'DELETE',
+      headers: {
+        Authorization: getAuthToken(), 
+      },
     });
 
     dispatch(removeDepartment(departmentId));

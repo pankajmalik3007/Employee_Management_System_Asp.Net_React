@@ -9,8 +9,23 @@ import {
 } from './ConditionSlice';
 import './ConditionComponent.css';
 
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TextField, Button } from '@mui/material';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  TextField,
+  Button,
+} from '@mui/material';
 import './ConditionComponent.css';
+
+const getAuthToken = () => {
+  const authToken = localStorage.getItem('token');
+  return authToken ? `Bearer ${authToken}` : '';
+};
 
 const ConditionComponent = () => {
   const dispatch = useDispatch();
@@ -22,6 +37,7 @@ const ConditionComponent = () => {
 
   const [searchYear, setSearchYear] = useState('');
   const [searchName, setSearchName] = useState('');
+  const [selectedEmployee, setSelectedEmployee] = useState(null);
 
   const handleMinSalaryChange = (e) => {
     dispatch(setMinSalary(e.target.value));
@@ -32,23 +48,30 @@ const ConditionComponent = () => {
   };
 
   const handleFetchSalariesInSalaryRange = () => {
-    dispatch(fetchSalariesInSalaryRange(minSalary, maxSalary));
+    dispatch(fetchSalariesInSalaryRange(minSalary, maxSalary, getAuthToken()));
   };
 
   const handleSearchYearChange = (e) => {
     setSearchYear(e.target.value);
   };
 
+  const handleFetchMonthlySalariesByDepartment = () => {
+    dispatch(fetchMonthlySalariesByDepartment(searchYear, getAuthToken()));
+  };
+
   const handleSearchNameChange = (e) => {
     setSearchName(e.target.value);
   };
 
-  const handleFetchMonthlySalariesByDepartment = () => {
-    dispatch(fetchMonthlySalariesByDepartment(searchYear));
-  };
-
   const handleFetchEmployeeByName = () => {
-    dispatch(fetchEmployeeByName(searchName));
+    dispatch(fetchEmployeeByName(searchName, getAuthToken()))
+      .then((result) => {
+        setSelectedEmployee(result[0]);
+      })
+      .catch((error) => {
+        console.error('Error fetching employee by name:', error);
+        setSelectedEmployee(null);
+      });
   };
 
   useEffect(() => {}, []);
@@ -136,6 +159,10 @@ const ConditionComponent = () => {
                 <TableRow>
                   <TableCell>Employee Name</TableCell>
                   <TableCell>Email</TableCell>
+                  <TableCell>Phone</TableCell>
+                  <TableCell>Gender</TableCell>
+                  <TableCell>DOB</TableCell>
+                  <TableCell>Department Name</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -143,12 +170,28 @@ const ConditionComponent = () => {
                   <TableRow key={employee.id}>
                     <TableCell>{employee.name}</TableCell>
                     <TableCell>{employee.email}</TableCell>
+                    <TableCell>{employee.phone}</TableCell>
+                    <TableCell>{employee.gender}</TableCell>
+                    <TableCell>{employee.dob}</TableCell>
+                    <TableCell>{employee.departementName}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
         </div>
+
+        {selectedEmployee && (
+          <div className="additional-info-container">
+            <h2>Additional Information</h2>
+            <div>ID: {selectedEmployee.id}</div>
+            <div>Password: {selectedEmployee.password}</div>
+            <div>Phone: {selectedEmployee.phone}</div>
+            <div>Gender: {selectedEmployee.gender}</div>
+            <div>DOB: {selectedEmployee.dob}</div>
+            <div>Department Name: {selectedEmployee.departementName}</div>
+          </div>
+        )}
       </div>
     </div>
   );
