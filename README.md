@@ -32,3 +32,13 @@ Using which the system can manage (create, read, update, and delete) the followi
 - Add search text box to filter records in the grid
 - On the top of the page, add a button to add new employee record
 - For this UI development, use the existing APIs created above.
+
+### Prerequisites
+
+- Install [Visual Studio](https://visualstudio.microsoft.com/) for ASP.NET development.
+- Set up [Microsoft SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms).
+
+1. Clone the repository.
+   ```bash
+   git clone https://github.com/pankajmalik3007/Performance_Management_System_Using_Asp.net_React-js..git
+   
