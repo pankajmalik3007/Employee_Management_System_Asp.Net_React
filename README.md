@@ -58,7 +58,42 @@ Implement a structured architecture for scalability, maintainability, and separa
 Develop code that is clean, well-organized, and easy to understand for future maintenance.
 
 ## Real-Time Events :
+User Registration:
 
+Event: New user registration in the system.
+Implication: Capture and store user information for authentication.
+User Login/Logout:
+
+Event: User login or logout.
+Implication: Track user activities and manage access to the system.
+Employee Creation/Modification/Deletion:
+
+Event: Creation, modification, or deletion of employee records.
+Implication: Update employee information and maintain data integrity.
+Department Creation/Modification/Deletion:
+
+Event: Creation, modification, or deletion of department records.
+Implication: Reflect changes in department structures and update employee associations.
+Salary Record Update:
+
+Event: Modification or deletion of salary records.
+Implication: Ensure accurate salary information for employees.
+Employee Search:
+
+Event: Employee search based on name.
+Implication: Retrieve and display relevant employee information in real-time.
+Department-wise Salary Reporting:
+
+Event: Request for department-wise salary reporting.
+Implication: Dynamically calculate and provide salary information for the specified year.
+Salary Range Filter:
+
+Event: Filter employees based on salary range.
+Implication: Display a real-time updated list of employees within the specified salary range.
+UI Interaction:
+
+Event: User interacts with the ReactJS UI (e.g., searching, editing, deleting, adding records).
+Implication: Trigger corresponding API calls and update the UI in real-time.
 
 ## Deliverables :
 - Create basic CRUD APIs for each entity mentioned above.
