@@ -71,12 +71,12 @@ Event: Creation, modification, or deletion of employee records.
 Implication: Update employee information and maintain data integrity.
 
 - **Department Creation/Modification/Deletion:**
-Event: Creation, modification, or deletion of department records.
-Implication: Reflect changes in department structures and update employee associations.
+- Event: Creation, modification, or deletion of department records.
+- Implication: Reflect changes in department structures and update employee associations.
 
 - **Salary Record Updates:**
-Event: Modification or deletion of salary records.
-Implication: Ensure accurate salary information for employees.
+- Event: Modification or deletion of salary records.
+- Implication: Ensure accurate salary information for employees.
 
 - **Employee Search:**
 Event: Employee search based on name.
