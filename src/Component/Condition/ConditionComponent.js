@@ -42,7 +42,6 @@ const ConditionComponent = () => {
   const handleMinSalaryChange = (e) => {
     dispatch(setMinSalary(e.target.value));
   };
-
   const handleMaxSalaryChange = (e) => {
     dispatch(setMaxSalary(e.target.value));
   };
@@ -97,6 +96,8 @@ const ConditionComponent = () => {
                 <TableRow>
                   <TableCell>Employee Name</TableCell>
                   <TableCell>Amount</TableCell>
+                  <TableCell>Department</TableCell>
+                  <TableCell>Date</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -104,6 +105,8 @@ const ConditionComponent = () => {
                   <TableRow key={salary.empId}>
                     <TableCell>{salary.empName}</TableCell>
                     <TableCell>{salary.amount}</TableCell>
+                    <TableCell>{salary.departmentName}</TableCell>
+                    <TableCell>{salary.date}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -111,7 +114,8 @@ const ConditionComponent = () => {
           </TableContainer>
         </div>
       </div>
-
+      <br></br>
+      <br></br>
       <div className="condition-controller">
         <h2>Monthly Salaries by Department</h2>
         <div className="year-input">
@@ -127,22 +131,27 @@ const ConditionComponent = () => {
               <TableHead>
                 <TableRow>
                   <TableCell>Department</TableCell>
+                  <TableCell>Month</TableCell>
                   <TableCell>Amount</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {Object.entries(monthlySalariesByDepartment).map(([department, amount]) => (
-                  <TableRow key={department}>
-                    <TableCell>{department}</TableCell>
-                    <TableCell>{amount}</TableCell>
-                  </TableRow>
+                {Object.entries(monthlySalariesByDepartment).map(([department, monthData]) => (
+                  Object.entries(monthData).map(([month, amount]) => (
+                    <TableRow key={`${department}-${month}`}>
+                      <TableCell>{department}</TableCell>
+                      <TableCell>{month}</TableCell>
+                      <TableCell>{amount}</TableCell>
+                    </TableRow>
+                  ))
                 ))}
               </TableBody>
             </Table>
           </TableContainer>
         </div>
       </div>
-
+      <br></br>
+      <br></br>
       <div className="condition-controller">
         <h2>Search Employee by Name</h2>
         <div className="name-input">
@@ -180,7 +189,6 @@ const ConditionComponent = () => {
             </Table>
           </TableContainer>
         </div>
-
         {selectedEmployee && (
           <div className="additional-info-container">
             <h2>Additional Information</h2>
@@ -196,5 +204,4 @@ const ConditionComponent = () => {
     </div>
   );
 };
-
 export default ConditionComponent;

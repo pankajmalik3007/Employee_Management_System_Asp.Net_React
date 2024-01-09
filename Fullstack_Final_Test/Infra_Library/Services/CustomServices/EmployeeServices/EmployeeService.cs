@@ -109,11 +109,7 @@ namespace Infra_Library.Services.CustomServices.EmployeeServices
 
             return employeeViewModels;
         }
-
-
-
-
-        public async Task<bool> Insert(EmployeeInsertModel employeeInsertModel)
+         public async Task<bool> Insert(EmployeeInsertModel employeeInsertModel)
         {
             Department department = await _employeeDepartmentRepository.Find(d => d.Name == employeeInsertModel.DepartementName);
             if (department == null)
@@ -152,8 +148,7 @@ namespace Infra_Library.Services.CustomServices.EmployeeServices
                     Gender = employee.Gender,
                     DOB = employee.DOB,
                     DepartementName = employee?.Department?.Name,
-                    // Assuming Salary is a navigation property
-                }).ToList();
+                 }).ToList();
 
                 return employeeViewModels;
             }
@@ -163,9 +158,7 @@ namespace Infra_Library.Services.CustomServices.EmployeeServices
                 throw;
             }
         }
-
-
-        public async Task<bool> Update(EmployeeUpdateModel employeeUpdateModel)
+         public async Task<bool> Update(EmployeeUpdateModel employeeUpdateModel)
         {
             try
             {
@@ -182,7 +175,6 @@ namespace Infra_Library.Services.CustomServices.EmployeeServices
                 {
                     return false;
                 }
-
                 existingEmployee.Name = employeeUpdateModel.Name;
                 existingEmployee.password = employeeUpdateModel.password;
                 existingEmployee.Email = employeeUpdateModel.Email;

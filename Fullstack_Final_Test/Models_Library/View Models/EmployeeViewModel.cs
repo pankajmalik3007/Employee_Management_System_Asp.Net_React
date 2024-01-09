@@ -18,7 +18,6 @@ namespace Models_Library.View_Models
         public DateTime DOB { get; set; }
         public string DepartementName { get; set; }
     }
-
     public class EmployeeInsertModel
     {
         public string Name { get; set; }

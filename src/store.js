@@ -11,9 +11,6 @@ const store = configureStore({
     salary: salaryReducer,
     condition: conditionReducer,
     login: loginReducer,
-   
-    
   },
 });
-
 export default store;

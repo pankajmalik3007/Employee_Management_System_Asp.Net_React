@@ -3324,23 +3324,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\panka\\.nuget\\packages\\": {},
+    "C:\\Users\\TGSUser148\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\panka\\Downloads\\Fullstack_Final_Test (1)\\Fullstack_Final_Test\\Fullstack_Final_Test\\Infra_Library\\Infra_Library.csproj",
+      "projectUniqueName": "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Infra_Library\\Infra_Library.csproj",
       "projectName": "Infra_Library",
-      "projectPath": "C:\\Users\\panka\\Downloads\\Fullstack_Final_Test (1)\\Fullstack_Final_Test\\Fullstack_Final_Test\\Infra_Library\\Infra_Library.csproj",
-      "packagesPath": "C:\\Users\\panka\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\panka\\Downloads\\Fullstack_Final_Test (1)\\Fullstack_Final_Test\\Fullstack_Final_Test\\Infra_Library\\obj\\",
+      "projectPath": "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Infra_Library\\Infra_Library.csproj",
+      "packagesPath": "C:\\Users\\TGSUser148\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Infra_Library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\panka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\TGSUser148\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3356,8 +3356,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\panka\\Downloads\\Fullstack_Final_Test (1)\\Fullstack_Final_Test\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj": {
-              "projectPath": "C:\\Users\\panka\\Downloads\\Fullstack_Final_Test (1)\\Fullstack_Final_Test\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj"
+            "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj": {
+              "projectPath": "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj"
             }
           }
         }
@@ -3421,7 +3421,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -27,7 +27,7 @@ export const insertSalary = createAsyncThunk('salary/insertSalary', async (newSa
 
 export const updateSalaryById = createAsyncThunk('salary/updateSalaryById', async ({ id, updatedProperties }) => {
   try {
-    const response = await axios.put('https://localhost:44311/api/Salary/updateSalary', {
+    const response = await axios.put('https://localhost:7127/api/Salary/updateSalary', {
       id: id,
       ...updatedProperties,
     }, {
@@ -35,14 +35,12 @@ export const updateSalaryById = createAsyncThunk('salary/updateSalaryById', asyn
         Authorization: getAuthToken(), 
       },
     });
-
-    return { id, updatedProperties };
+  return { id, updatedProperties };
   } catch (error) {
     console.error('Error updating salary:', error);
     throw error;
   }
 });
-
 export const deleteSalary = createAsyncThunk('salary/deleteSalary', async (id) => {
   await axios.delete(`${BaseUrl.deleteSalaryUrl}?id=${id}`, {
     headers: {
@@ -51,7 +49,6 @@ export const deleteSalary = createAsyncThunk('salary/deleteSalary', async (id) =
   });
   return id;
 });
-
 const initialState = {
   salaries: [],
   status: 'idle',

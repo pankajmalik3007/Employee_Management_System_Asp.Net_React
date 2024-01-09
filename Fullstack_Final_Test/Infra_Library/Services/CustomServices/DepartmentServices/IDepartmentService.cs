@@ -17,6 +17,6 @@ namespace Infra_Library.Services.CustomServices.DepartmentServices
         Task<bool> Update(DepartmentUpdateModel departmentUpdateModel);
         Task<bool> Delete(int id);
         Task<Department> Find(Expression<Func<Department, bool>> match);
-        Task<Dictionary<string, decimal>> GetMonthlySalaryByDepartment(int year);
+         Task<Dictionary<string, Dictionary<string, decimal>>> GetMonthlySalaryByDepartment(int year);
     }
 }

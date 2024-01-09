@@ -70,7 +70,7 @@ export const insertDepartment = (departmentData) => async (dispatch) => {
 
 export const updateDepartmentById = (departmentId, updatedDepartmentData) => async (dispatch) => {
   try {
-    const response = await fetch(`https://localhost:44311/api/Department/updateDepartment`, {
+    const response = await fetch(`https://localhost:7127/api/Department/updateDepartment`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

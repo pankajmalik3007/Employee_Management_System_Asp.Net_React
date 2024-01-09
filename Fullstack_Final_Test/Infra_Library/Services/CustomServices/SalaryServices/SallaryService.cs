@@ -17,14 +17,14 @@ namespace Infra_Library.Services.CustomServices.SalaryServices
         public IRepository<Salary> _salary;
         public IRepository<Department> _Department;
         public IRepository<Employee> _employee;
-        private readonly MainDbContext _mainDbContext;
+        private readonly MainDbContext _service;
 
         public SallaryService(IRepository<Salary> salary, IRepository<Department> Department, IRepository<Employee> employee,  MainDbContext mainDbContext)
         {
             _salary = salary;
             _Department = Department;
             _employee = employee;
-            _mainDbContext = mainDbContext;
+            _service = mainDbContext;
         }
 
 
@@ -56,7 +56,7 @@ namespace Infra_Library.Services.CustomServices.SalaryServices
 
         public async Task<EmployeeSalaryViewModel> Get(int id)
         {
-            var salary = await _mainDbContext.Salary
+            var salary = await _service.Salary
                 .Include(s => s.Employee)
                 .ThenInclude(e => e.Department)
                 .FirstOrDefaultAsync(s => s.Id == id);
@@ -81,7 +81,7 @@ namespace Infra_Library.Services.CustomServices.SalaryServices
         public async Task<ICollection<EmployeeSalaryViewModel>> GetAll()
         {
             ICollection<EmployeeSalaryViewModel> employeeViewModels = new List<EmployeeSalaryViewModel>();
-            ICollection<Salary> salaries = await _mainDbContext.Salary
+            ICollection<Salary> salaries = await _service.Salary
                 .Include(s => s.Employee)
                 .ThenInclude(e => e.Department)
                 .ToListAsync();
@@ -103,7 +103,7 @@ namespace Infra_Library.Services.CustomServices.SalaryServices
 
         public async Task<ICollection<EmployeeSalaryViewModel>> GetEmployeesInSalaryRange(decimal minSalary, decimal maxSalary)
         {
-            var salaries = await _mainDbContext.Salary
+            var salaries = await _service.Salary
                 .Include(s => s.Employee)
                 .ThenInclude(e => e.Department)
                 .Where(s => s.Amount >= minSalary && s.Amount <= maxSalary)
@@ -134,6 +134,7 @@ namespace Infra_Library.Services.CustomServices.SalaryServices
 
             return employeeSalaries;
         }
+
 
         public async  Task<bool> Insert(SallaryInsertModel sallaryInsertModel)
         {

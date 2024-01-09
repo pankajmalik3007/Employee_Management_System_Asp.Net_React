@@ -5,7 +5,6 @@ const getAuthToken = () => {
   const authToket = localStorage.getItem('token');
   return authToket ? `Bearer ${authToket}` : '';
 };
-
 export const employeeSlice = createSlice({
   name: 'employee',
   initialState: {
@@ -36,7 +35,7 @@ export const { setEmployees, addEmployee, updateEmployee, removeEmployee } = emp
 
 export const fetchAllEmployees = () => async (dispatch) => {
   try {
-    const response = await fetch(`https://localhost:44311/api/Employee/getAllEmployee`, {
+    const response = await fetch(`https://localhost:7127/api/Employee/getAllEmployee`, {
       method: 'GET',
       credentials: 'include',
       headers: {
@@ -72,7 +71,7 @@ export const insertEmployee = (employeeData) => async (dispatch) => {
 
 export const updateEmployeeById = (employeeId, updatedEmployeeData) => async (dispatch) => {
   try {
-    const response = await fetch(`https://localhost:44311/api/Employee/UpdateEmployee`, {
+    const response = await fetch(`https://localhost:7127/api/Employee/UpdateEmployee`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

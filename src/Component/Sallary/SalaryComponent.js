@@ -74,17 +74,17 @@ const SalaryComponent = () => {
         date: '',
       });
       handleCloseDialog();
+      dispatch(fetchAllSalaries(getAuthToken()));
     }
   };
-  
-
   const handleUpdateSalary = () => {
     if (selectedSalaryId) {
       dispatch(updateSalaryById({ id: selectedSalaryId, updatedProperties: newSalary }, authToken));
       setSelectedSalaryId(null);
       handleCloseDialog();
+      dispatch(fetchAllSalaries(getAuthToken()));
     }
-  };  
+  };
 
   const handleDeleteSalaryItem = (empId) => {
     dispatch(deleteSalary(empId));
@@ -101,33 +101,28 @@ const SalaryComponent = () => {
   };
 
   useEffect(() => {
-    
-    dispatch(fetchAllSalaries(getAuthToken()));
+     dispatch(fetchAllSalaries(getAuthToken()));
   }, [dispatch]);
 
   return (
     <div>
       <h1>Salary List</h1>
-
-      
       <Button variant="contained" color="primary" onClick={handleOpenDialog}>
         Add New Salary
       </Button>
-
-      
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogTitle>Add New Salary</DialogTitle>
         <DialogContent>
           <div>
-            <label>Employee Name:</label>
+            <label>EmpName:</label>
             <TextField type="text" name="emp_Name" value={newSalary.emp_Name} onChange={handleInputChange} />
           </div>
           <div>
-            <label>Amount:</label>
+            <label>SalAmount:</label>
             <TextField type="number" name="amount" value={newSalary.amount} onChange={handleInputChange} />
           </div>
           <div>
-          <label>DOB:</label>
+          <label>DateofSalary:</label>
           <TextField
             type="date"
             name="date"
@@ -146,8 +141,7 @@ const SalaryComponent = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Employee ID</TableCell>
-              <TableCell>Employee Name</TableCell>
+             <TableCell>Employee Name</TableCell>
               <TableCell>Amount</TableCell>
               <TableCell>Date</TableCell>
               <TableCell>Actions</TableCell>
@@ -156,7 +150,6 @@ const SalaryComponent = () => {
           <TableBody>
             {salaries.map((salary) => (
               <TableRow key={salary.empId}>
-                <TableCell>{salary.empId}</TableCell>
                 <TableCell>{salary.empName}</TableCell>
                 <TableCell>{salary.amount}</TableCell>
                 <TableCell>{new Date(salary.date).toLocaleDateString()}</TableCell>
@@ -172,5 +165,4 @@ const SalaryComponent = () => {
     </div>
   );
 };
-
 export default SalaryComponent;

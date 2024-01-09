@@ -10,7 +10,6 @@ namespace Infra_Library.Context
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Department { get; set; }
         public DbSet<Salary> Salary { get; set; }
-
         public MainDbContext(DbContextOptions<MainDbContext> options) : base(options) { }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

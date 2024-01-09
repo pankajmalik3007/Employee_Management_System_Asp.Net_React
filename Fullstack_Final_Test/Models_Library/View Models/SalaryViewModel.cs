@@ -13,6 +13,7 @@ namespace Models_Library.View_Models
         public decimal Amount { get; set; }
         public DateTime Date { get; set; }
         public string DepartmentName { get; set; }
+        
     }
 
     public class SallaryInsertModel

@@ -1,6 +1,6 @@
 
 class BaseUrl {
-  static apiBaseUrl = 'https://localhost:44311/api/';
+  static apiBaseUrl = 'https://localhost:7127/api/';
 
   static getAllEmployeeUrl = `${BaseUrl.apiBaseUrl}Employee/getAllEmployee`;
   static insertEmployeeUrl = `${BaseUrl.apiBaseUrl}Employee/InsertEmployee`;

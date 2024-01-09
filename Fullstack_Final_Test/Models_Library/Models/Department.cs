@@ -10,12 +10,10 @@ namespace Models_Library.Models
 {
     public class Department : BaseEntity
     {
-
         [Required(ErrorMessage = "Please Enter UserName...!")]
         [StringLength(100)]
         public string Name { get; set; }
         [JsonIgnore] 
-
         public virtual List<Employee> Employees { get; set; }
     }
 }

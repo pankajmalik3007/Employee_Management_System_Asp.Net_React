@@ -13,15 +13,12 @@ namespace Infra_Library.Services.CustomServices.DepartmentServices
 {
     public class DepartmentService : IDepartmentService
     {
-
         private readonly IRepository<Department> _repository;
         private readonly IRepository<Salary> _salaryRepository;
-        private readonly MainDbContext _mainDbContext;
-        public DepartmentService(IRepository<Department> repository , MainDbContext mainDbContext, IRepository<Salary> salaryRepository)
+        public DepartmentService(IRepository<Department> repository, IRepository<Salary> salaryRepository)
         {
             _repository = repository;
             _salaryRepository = salaryRepository;
-            _mainDbContext = mainDbContext;
         }
         public async Task<bool> Delete(int id)
         {
@@ -36,8 +33,7 @@ namespace Infra_Library.Services.CustomServices.DepartmentServices
                 {
                     return false;
                 }
-
-            }
+             }
             else
             {
                 return false;
@@ -82,47 +78,50 @@ namespace Infra_Library.Services.CustomServices.DepartmentServices
         }
 
 
-        public async Task<Dictionary<string, decimal>> GetMonthlySalaryByDepartment(int year)
+        public async Task<Dictionary<string, Dictionary<string, decimal>>> GetMonthlySalaryByDepartment(int year)
         {
-            try
+             try
+        {
+        var salaries = await _salaryRepository.FindAll(
+            s => s.Date.Year == year,
+            s => s.Employee,
+            s => s.Employee.Department
+        );
+
+        var departmentSalaries = new Dictionary<string, Dictionary<string, decimal>>();
+
+        foreach (var salary in salaries)
+        {
+            var departmentName = salary.Employee?.Department?.Name;
+            var month = salary.Date.ToString("MMMM");
+
+            if (!string.IsNullOrEmpty(departmentName))
             {
-                var salaries = await _salaryRepository.FindAll(
-                    s => s.Date.Year == year,
-                    s => s.Employee,
-                    s => s.Employee.Department
-                );
-
-                var departmentSalaries = new Dictionary<string, decimal>();
-
-                foreach (var salary in salaries)
+                if (!departmentSalaries.ContainsKey(departmentName))
                 {
-                    var departmentName = salary.Employee?.Department?.Name;
-                    var month = salary.Date.ToString("MMMM");
-
-                    if (!string.IsNullOrEmpty(departmentName))
-                    {
-                        if (departmentSalaries.ContainsKey(departmentName))
-                        {
-                            departmentSalaries[departmentName] += salary.Amount;
-                        }
-                        else
-                        {
-                            departmentSalaries[departmentName] = salary.Amount;
-                        }
-                    }
+                    departmentSalaries[departmentName] = new Dictionary<string, decimal>();
                 }
 
-                return departmentSalaries;
+                if (departmentSalaries[departmentName].ContainsKey(month))
+                {
+                    departmentSalaries[departmentName][month] += salary.Amount;
+                }
+                else
+                {
+                    departmentSalaries[departmentName][month] = salary.Amount;
+                }
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred in GetMonthlySalaryByDepartment: {ex.Message}");
-                throw;
-            }
-        }
+         }
+           return departmentSalaries;
+         }
+           catch (Exception ex)
+         {
+         Console.WriteLine($"An error occurred in GetMonthlySalaryByDepartment: {ex.Message}");
+         throw;
+         }
+     }
 
-
-        public Task<bool> Insert(DepartmentInsertModel departmentInsertModel)
+         public Task<bool> Insert(DepartmentInsertModel departmentInsertModel)
         {
             Department department = new()
             {

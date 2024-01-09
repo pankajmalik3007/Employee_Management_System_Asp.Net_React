@@ -15,6 +15,4 @@ root.render(
   </Provider>
   </AuthProvider>
 );
-
-
 reportWebVitals();

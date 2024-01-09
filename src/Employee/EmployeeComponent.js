@@ -6,9 +6,7 @@ import {
   updateEmployeeById,
   deleteEmployee,
 } from './EmployeeSlice';
-
 import { useAuth } from '../Component/Auth/authContext';
-
 import {
   Table,
   TableBody,
@@ -23,9 +21,10 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
+  Select,
+  MenuItem
 } from '@mui/material';
-
-
+import { fetchAllDepartments } from '../Component/Department/DepartmentSlice';
 const getAuthToken = () => {
   const authToken = localStorage.getItem('token');
   return authToken ? `Bearer ${authToken}` : '';
@@ -33,9 +32,8 @@ const getAuthToken = () => {
 const EmployeeComponent = () => {
   const dispatch = useDispatch();
   const {  authToken } = useAuth(); 
-
   const employees = useSelector((state) => state.employee.employees);
-
+  const departments = useSelector((state) => state.department.departments);
   const [newEmployee, setNewEmployee] = useState({
     name: '',
     password: '',
@@ -49,16 +47,14 @@ const EmployeeComponent = () => {
     console.log("Fetching employees...");
     console.log("Auth Token:", authToken); 
     dispatch(fetchAllEmployees(getAuthToken()));
+    dispatch(fetchAllDepartments());  
   }, [dispatch, authToken]);
   const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
-
   const [openDialog, setOpenDialog] = useState(false);
-
   const handleOpenDialog = () => {
     setOpenDialog(true);
   };
-
-  const handleCloseDialog = () => {
+ const handleCloseDialog = () => {
     setOpenDialog(false);
     setNewEmployee({
       name: '',
@@ -70,24 +66,24 @@ const EmployeeComponent = () => {
       departementName: '',
     });
   };
-
   const handleInputChange = (e) => {
     setNewEmployee({ ...newEmployee, [e.target.name]: e.target.value });
   };
-
-  const handleInsertEmployee = () => {
-    dispatch(insertEmployee(newEmployee, authToken));
+  const handleInsertEmployee = async () => {
+    await dispatch(insertEmployee(newEmployee, authToken));
     handleCloseDialog();
+    dispatch(fetchAllEmployees(getAuthToken()));
   };
-
-  const handleUpdateEmployee = () => {
+  
+  const handleUpdateEmployee = async () => {
     if (selectedEmployeeId) {
-      dispatch(updateEmployeeById(selectedEmployeeId, newEmployee, authToken));
+      await dispatch(updateEmployeeById(selectedEmployeeId, newEmployee, authToken));
       setSelectedEmployeeId(null);
       handleCloseDialog();
+      dispatch(fetchAllEmployees(getAuthToken()));
     }
   };
-
+  
   const handleDeleteEmployee = (id) => {
     dispatch(deleteEmployee(id, authToken));
   };
@@ -105,12 +101,9 @@ const EmployeeComponent = () => {
     });
     handleOpenDialog();
   };
-  
   return (
     <div>
       <h1>Employee List</h1>
-
-     
       <Button variant="contained" color="primary" onClick={handleOpenDialog}>
         Add New Employee
       </Button>
@@ -118,7 +111,7 @@ const EmployeeComponent = () => {
         <DialogTitle>Add New Employee</DialogTitle>
         <DialogContent>
           <div>
-            <label>Name:</label>
+            <label>EmpName:</label>
             <TextField type="text" name="name" value={newEmployee.name} onChange={handleInputChange} />
           </div>
           <div>
@@ -126,20 +119,19 @@ const EmployeeComponent = () => {
             <TextField type="text" name="password" value={newEmployee.password} onChange={handleInputChange} />
           </div>
           <div>
-            <label>Email:</label>
+            <label>EmailAdd    </label>
             <TextField type="text" name="email" value={newEmployee.email} onChange={handleInputChange} />
           </div>
           <div>
-            <label>Phone:</label>
+            <label>PhoneNo:</label>
             <TextField type="text" name="phone" value={newEmployee.phone} onChange={handleInputChange} />
           </div>
           <div>
-            <label>Gender:</label>
+            <label>EmGender:</label>
             <TextField type="text" name="gender" value={newEmployee.gender} onChange={handleInputChange} />
           </div>
-          
-          <div>
-          <label>DOB:</label>
+           <div>
+          <label>DaOfBirth:</label>
           <TextField
             type="date"
             name="dob"
@@ -148,8 +140,17 @@ const EmployeeComponent = () => {
           />
         </div>
           <div>
-            <label>Department Name:</label>
-            <TextField type="text" name="departementName" value={newEmployee.departementName} onChange={handleInputChange} />
+            <label>DeptName:</label>
+            <Select type="text" name="departementName" value={newEmployee.departementName} onChange={handleInputChange} >
+            <MenuItem value="" disabled>
+                Select Department
+              </MenuItem>
+              {departments && departments.map((department) => (
+              <MenuItem key={department.id} value={department.name}>
+                {department.name}
+              </MenuItem>
+            ))}
+            </Select>
           </div>
         </DialogContent>
         <DialogActions>
@@ -158,18 +159,15 @@ const EmployeeComponent = () => {
           <Button onClick={handleUpdateEmployee}>Edit Employee</Button>
        </DialogActions>
       </Dialog>
-
-     
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
-             
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
               <TableCell>Phone</TableCell>
               <TableCell>Gender</TableCell>
-              <TableCell>DOB</TableCell>
+              <TableCell>Date of Birth</TableCell>
               <TableCell>Department Name</TableCell>
               <TableCell>Actions</TableCell>
             </TableRow>
@@ -190,13 +188,11 @@ const EmployeeComponent = () => {
             </TableRow>
           ))}
         </TableBody>
-
-        </Table>
+       </Table>
       </TableContainer>
     </div>
   );
 };
-
 export default EmployeeComponent;
 
 

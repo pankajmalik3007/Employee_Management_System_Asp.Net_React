@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+import BaseUrl from '../../Url/BaseUrl';
 export const loginSlice = createSlice({
   name: 'login',
   initialState: {
@@ -30,7 +30,7 @@ export const { setUser, setError, logout } = loginSlice.actions;
 
 export const userlogin = (email, password) => async (dispatch) => {
   try {
-    const response = await fetch(`https://localhost:44311/api/Account/login`, {
+    const response = await fetch(BaseUrl.loginUrl, {  
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -59,10 +59,9 @@ export const userlogin = (email, password) => async (dispatch) => {
     );
   }
 };
-
 export const register = (firstName, lastName, email, password) => async (dispatch) => {
   try {
-    const response = await fetch(`https://localhost:44311/api/Account/register`, {
+    const response = await fetch(BaseUrl.registerUrl, {  
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -74,7 +73,6 @@ export const register = (firstName, lastName, email, password) => async (dispatc
         Password: password,
       }),
     });
-
     if (response.ok) {
       const data = await response.json();
       dispatch(setUser(data));

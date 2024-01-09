@@ -17,11 +17,9 @@ const Navbar = () => {
   const openDrawer = () => {
     setDrawerOpen(true);
   };
-
   const closeDrawer = () => {
     setDrawerOpen(false);
   };
-
   return (
     <>
       <AppBar position="static" style={{ backgroundColor: '#2e004f' }}>
@@ -71,3 +69,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+

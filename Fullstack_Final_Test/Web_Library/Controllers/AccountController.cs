@@ -34,15 +34,13 @@ namespace Web_Library.Controllers
             _dbContext = dbContext;
             _jwtAuthManager = jwtAuthManager;
         }
-
-        [HttpPost("register")]
+         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserInsertModel model)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(new { Message = "Invalid registration data", Errors = ModelState.Values.SelectMany(v => v.Errors) });
             }
-
             var user = new User
             {
                 UserName = model.Email,
@@ -80,32 +78,20 @@ namespace Web_Library.Controllers
                 return Ok(new { Message = "Login successful", Token = token });
             }
 
-            if (result.IsLockedOut)
-            {
-                return BadRequest(new { Message = "Account locked out", Errors = "Too many failed login attempts. Try again later." });
-            }
-
-            if (result.RequiresTwoFactor)
-            {
-                return BadRequest(new { Message = "Two-factor authentication required", Errors = "Two-factor authentication is required for this account." });
-            }
-
-            if (result.IsNotAllowed)
+           if (result.IsNotAllowed)
             {
                 return BadRequest(new { Message = "Login failed", Errors = "Account is not allowed to log in." });
             }
 
             return BadRequest(new { Message = "Login failed", Errors = "Invalid login attempt" });
         }
-
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
             return Ok(new { Message = "Logout successful" });
         }
-
-        [HttpGet("getallusers")]
+         [HttpGet("getallusers")]
         
         public IActionResult GetAllUsers()
         {

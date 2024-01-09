@@ -28,7 +28,7 @@ const getAuthToken = () => {
 
 const DepartmentComponent = () => {
   const dispatch = useDispatch();
-  const { authToken } = useAuth(); // Use your auth context
+  const { authToken } = useAuth(); 
   const departments = useSelector((state) => state.department.departments);
 
   const [newDepartment, setNewDepartment] = useState({
@@ -41,23 +41,25 @@ const DepartmentComponent = () => {
     setNewDepartment({ ...newDepartment, [e.target.name]: e.target.value });
   };
 
-  const handleInsertDepartment = () => {
-    dispatch(insertDepartment(newDepartment, authToken)); 
+  const handleInsertDepartment = async () => {
+    await dispatch(insertDepartment(newDepartment, authToken)); 
     setNewDepartment({
       name: '',
     });
+    dispatch(fetchAllDepartments(getAuthToken()));
   };
-
-  const handleUpdateDepartment = () => {
+  
+  const handleUpdateDepartment = async () => {
     if (selectedDepartmentId) {
-      dispatch(updateDepartmentById(selectedDepartmentId, newDepartment, authToken)); 
+      await dispatch(updateDepartmentById(selectedDepartmentId, newDepartment, authToken)); 
       setSelectedDepartmentId(null);
       setNewDepartment({
         name: '',
       });
+      dispatch(fetchAllDepartments(getAuthToken()));
     }
   };
-
+  
   const handleDeleteDepartment = (id) => {
     dispatch(deleteDepartment(id, authToken)); 
   };

@@ -66,3 +66,37 @@ C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack
 C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.pdb
 C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.genruntimeconfig.cache
 C:\Users\panka\Downloads\Fullstack_Final_Test (1)\Fullstack_Final_Test\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\ref\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.deps.json
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.runtimeconfig.json
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.pdb
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.dll
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.pdb
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.AssemblyReference.cache
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfoInputs.cache
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfo.cs
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CoreCompileInputs.cache
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CopyComplete
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\refint\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.pdb
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.genruntimeconfig.cache
+C:\Users\TGSUser148\Downloads\EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\ref\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.deps.json
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.runtimeconfig.json
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Infra_Library.pdb
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.dll
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\bin\Debug\net6.0\Models_Library.pdb
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.AssemblyReference.cache
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfoInputs.cache
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.AssemblyInfo.cs
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CoreCompileInputs.cache
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.csproj.CopyComplete
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\refint\Infra_Library.dll
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.pdb
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\Infra_Library.genruntimeconfig.cache
+C:\Users\TGSUser148\Downloads\Pankaj_Malik_EMP_Management_System\employee\Fullstack_Final_Test\Infra_Library\obj\Debug\net6.0\ref\Infra_Library.dll

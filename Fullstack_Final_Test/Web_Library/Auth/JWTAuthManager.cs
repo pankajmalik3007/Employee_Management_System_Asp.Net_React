@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Web_Library.Auth
 {
-    public class JWTAuthManager : IJWTAuthManager
+     public class JWTAuthManager : IJWTAuthManager
     {
         private readonly IConfiguration _configuration;
 
@@ -16,8 +16,7 @@ namespace Web_Library.Auth
         {
             _configuration = configuration;
         }
-
-        public string GenerateJWT(User user)
+         public string GenerateJWT(User user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
