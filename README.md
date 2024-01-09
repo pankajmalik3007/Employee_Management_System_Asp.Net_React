@@ -40,5 +40,5 @@ Using which the system can manage (create, read, update, and delete) the followi
 
 1. Clone the repository.
    ```bash
-   git clone https://github.com/pankajmalik3007/Performance_Management_System_Using_Asp.net_React-js..git
+   git clone https://github.com/pankajmalik3007/Employee_Management_System_Asp.Net_React.git
    
