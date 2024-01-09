@@ -1,10 +1,10 @@
 # Employee_Management_System.
-## Technologies.
+## Technologies :
 - **Backend :**.Net Core APIs.
 - **Database :** SQL Server.
 - **Frontend :** ReactJS.
 
-## Project Details
+## Project Details :
 Design and implement RESTful APIs for a simple Employee Management Module. 
 Using which the system can manage (create, read, update, and delete) the following entities.
 
@@ -12,7 +12,55 @@ Using which the system can manage (create, read, update, and delete) the followi
 - Department (Id, Name)
 - Salary (Id, EmpId, Amount, Date)
 
-## Deliverables
+## Business Needs :
+- **Employee Management :**
+Create, read, update, and delete operations for employee records.
+Capture essential employee information like Name, Email, Phone, Gender, Date of Birth, and Department.
+
+- **Department Management :**
+Create, read, update, and delete operations for department records.
+Associate each employee with a specific department.
+
+- **Salary Management :**
+Create, read, update, and delete operations for salary records.
+Link salary information to specific employees.
+
+- **Employee Search :**
+Implement a search functionality to find employees based on their name.
+Return detailed information about employees, including department name.
+
+- **Department-wise Salary Reporting:**
+Retrieve monthly salary amounts for each department for a given year.
+
+- **Salary Range Filter :**
+Allow users to filter employees based on salary range.
+Return employee details, including name, salary, and department, within the specified range.
+
+- **Basic Validations :**
+Ensure all APIs have necessary input validations to maintain data integrity.
+
+- **API Authentication :**
+Implement user registration, login, and logout functionalities for API authentication.
+
+- **Error Handling:**
+Implement robust error handling mechanisms to provide meaningful feedback in case of issues.
+
+- **Logging :**
+Implement logging to capture and analyze events, errors, or important transactions.
+
+- **EF/Linque Usage :**
+Leverage Entity Framework (EF) and LINQ for efficient data access and manipulation
+
+- **Onion/N-Tier Architecture :**
+Implement a structured architecture for scalability, maintainability, and separation of concerns.
+
+- **Clean and Readable Code:**
+Develop code that is clean, well-organized, and easy to understand for future maintenance.
+
+## Real-Time Events :
+
+
+## Deliverables :
 - Create basic CRUD APIs for each entity mentioned above.
 - Create an API that will take Employee Name as an input and return a list of employees 
   (all of employee’s fields and department name) (case insensitive search)
