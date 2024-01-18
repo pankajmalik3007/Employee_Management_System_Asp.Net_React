@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj": {}
+    "D:\\Internship Project\\Emp_Management_System\\Employee_Management_System_Asp.Net_React\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj": {
+    "D:\\Internship Project\\Emp_Management_System\\Employee_Management_System_Asp.Net_React\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj",
+        "projectUniqueName": "D:\\Internship Project\\Emp_Management_System\\Employee_Management_System_Asp.Net_React\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj",
         "projectName": "Models_Library",
-        "projectPath": "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj",
-        "packagesPath": "C:\\Users\\TGSUser148\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TGSUser148\\Downloads\\Pankaj_Malik_EMP_Management_System\\employee\\Fullstack_Final_Test\\Models_Library\\obj\\",
+        "projectPath": "D:\\Internship Project\\Emp_Management_System\\Employee_Management_System_Asp.Net_React\\Fullstack_Final_Test\\Models_Library\\Models_Library.csproj",
+        "packagesPath": "C:\\Users\\TGCUser111\\.nuget\\packages\\",
+        "outputPath": "D:\\Internship Project\\Emp_Management_System\\Employee_Management_System_Asp.Net_React\\Fullstack_Final_Test\\Models_Library\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\TGSUser148\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\TGCUser111\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
